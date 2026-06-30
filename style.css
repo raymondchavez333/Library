@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid black;
+}
+
+.ui {
+    display: grid;
+    grid-template-rows: 200px 800px;
+
+}
