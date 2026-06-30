@@ -17,8 +17,10 @@ function Book (title, author, pages, read){
         this.read = "not read yet";
     }
 
+    this.id = crypto.randomUUID();
+
     this.info = function(){
-        return (`${this.title} by ${this.author}, ${this.pages}, ${this.read}`);
+        return (`${this.title} by ${this.author}, ${this.pages}, ${this.read}, ${this.id}`);
     }
 }
 
