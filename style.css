@@ -9,6 +9,15 @@ div {
 
 .ui {
     display: grid;
-    grid-template-rows: 200px 800px;
+    grid-template-rows: 150px 800px;
 
+}
+
+.top {
+    font-size: 60px;
+    font-weight: bold;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding-left: 80px;
 }
