@@ -21,3 +21,9 @@ div {
     align-items: center;
     padding-left: 80px;
 }
+
+.bottom {
+    padding-left: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+}
