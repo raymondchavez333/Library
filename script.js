@@ -31,3 +31,6 @@ const theHobbit = new Book("The Hobbit", "J.R.R.", 295, false);
 console.log(theHobbit.info());
 addBookToLibrary(theHobbit);
 console.log(myLibrary);
+const atomicHabbits = new Book("Atomic Habits", "James Clear", 320, true);
+addBookToLibrary(atomicHabbits);
+console.log(myLibrary);
