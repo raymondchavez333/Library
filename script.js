@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 function Book (title, author, pages, read){
 
     if(!new.target) {
@@ -20,5 +22,8 @@ function Book (title, author, pages, read){
     }
 }
 
+function addBookToLibrary(){
+    
+}
 const theHobbit = new Book("The Hobbit", "J.R.R.", 295, false);
 console.log(theHobbit.info());
