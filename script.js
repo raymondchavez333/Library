@@ -47,10 +47,13 @@ console.log(myLibrary);
 const bot = document.querySelector(".bottom");
 bot.setAttribute("style", "background-color: orange;");
 
-myLibrary.forEach( () => {
+myLibrary.forEach( (object) => {
     let card = document.createElement("div");
     card.setAttribute("class", "card");
     card.setAttribute("style", "width: 180px; height: 250px; border-color: black; display: grid; grid-template-rows: 80px 80px 35px 35px");
-
+    let title = document.createElement("div");
+    title.setAttribute("class", "title");
+    title.textContent = `${object.title}`;
+    card.appendChild(title);
     bot.appendChild(card);
 });
