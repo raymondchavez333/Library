@@ -50,6 +50,7 @@ bot.setAttribute("style", "background-color: orange;");
 myLibrary.forEach( () => {
     let card = document.createElement("div");
     card.setAttribute("class", "card");
-    card.setAttribute("style", "width: 180px; height: 250px; border-color: black");
+    card.setAttribute("style", "width: 180px; height: 250px; border-color: black; display: grid; grid-template-rows: 80px 80px 35px 35px");
+
     bot.appendChild(card);
 });
