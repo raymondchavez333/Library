@@ -42,7 +42,14 @@ addBookToLibrary(howToWinFriends);
 // console.log(myLibrary);
 const deepWork = new Book("Deep Work", "Cal Newport", 300, true);
 addBookToLibrary(deepWork);
-// console.log(myLibrary);
+console.log(myLibrary);
 
 const bot = document.querySelector(".bottom");
 bot.setAttribute("style", "background-color: orange;");
+
+myLibrary.forEach( () => {
+    let card = document.createElement("div");
+    card.setAttribute("class", "card");
+    card.setAttribute("style", "width: 180px; height: 250px; border-color: black");
+    bot.appendChild(card);
+});
