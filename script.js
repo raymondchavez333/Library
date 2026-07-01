@@ -55,5 +55,9 @@ myLibrary.forEach( (object) => {
     title.setAttribute("class", "title");
     title.textContent = `${object.title}`;
     card.appendChild(title);
+    let author = document.createElement("div");
+    author.setAttribute("class", "author");
+    author.textContent = `${object.author}`;
+    card.appendChild(author);
     bot.appendChild(card);
 });
