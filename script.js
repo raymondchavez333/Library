@@ -59,5 +59,13 @@ myLibrary.forEach( (object) => {
     author.setAttribute("class", "author");
     author.textContent = `${object.author}`;
     card.appendChild(author);
+    let pages = document.createElement("div");
+    pages.setAttribute("class", "pages");
+    pages.textContent = `${object.pages}`;
+    card.appendChild(pages);
+    let read = document.createElement("div");
+    read.setAttribute("class", "read");
+    read.textContent = `${object.read}`;
+    card.appendChild(read);
     bot.appendChild(card);
 });
