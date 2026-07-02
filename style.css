@@ -35,3 +35,10 @@ div {
     align-items: center;
     justify-content: start;
 }
+
+#showDialog {
+    font-weight: bold;
+    font-size: 18px;
+    border-style: none;
+    background-color: transparent;
+}
