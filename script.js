@@ -1,3 +1,28 @@
+const showButton = document.getElementById("showDialog");
+const favDialog = document.getElementById("favDialog");
+// const outputBox = document.querySelector("output");
+// const selectEl = favDialog.querySelector("select");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
+
+// "Show the dialog" button opens the <dialog> modally
+showButton.addEventListener("click", () => {
+  favDialog.showModal();
+});
+
+// "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event.
+favDialog.addEventListener("close", (e) => {
+  outputBox.value =
+    favDialog.returnValue === "default"
+      ? "No return value."
+      : `ReturnValue: ${favDialog.returnValue}.`; // Have to check for "default" rather than empty string
+});
+
+// Prevent the "confirm" button from the default behavior of submitting the form, and close the dialog with the `close()` method, which triggers the "close" event.
+confirmBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // We don't want to submit this fake form
+  favDialog.close(selectEl.value); // Have to send the select box value here.
+});
+
 const myLibrary = [];
 
 function Book (title, author, pages, read){
@@ -29,20 +54,20 @@ function addBookToLibrary(book){
 }
 const theHobbit = new Book("The Hobbit", "J.R.R.", 295, false);
 // console.log(theHobbit.info());
-addBookToLibrary(theHobbit);
+// addBookToLibrary(theHobbit);
 // console.log(myLibrary);
 const atomicHabbits = new Book("Atomic Habits", "James Clear", 320, true);
-addBookToLibrary(atomicHabbits);
+// addBookToLibrary(atomicHabbits);
 // console.log(myLibrary);
 const subtleArt = new Book("The Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true);
-addBookToLibrary(subtleArt);
+// addBookToLibrary(subtleArt);
 // console.log(myLibrary);
 const howToWinFriends = new Book("How to Win Friends and Influence People", "Dale Carnegie", 290, true);
-addBookToLibrary(howToWinFriends);
+// addBookToLibrary(howToWinFriends);
 // console.log(myLibrary);
 const deepWork = new Book("Deep Work", "Cal Newport", 300, true);
-addBookToLibrary(deepWork);
-console.log(myLibrary);
+// addBookToLibrary(deepWork);
+// console.log(myLibrary);
 
 const bot = document.querySelector(".bottom");
 bot.setAttribute("style", "background-color: orange;");
