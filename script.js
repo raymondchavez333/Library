@@ -3,27 +3,34 @@ const favDialog = document.getElementById("favDialog");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
-const yes = document.getElementById("yes");
-const no = document.getElementById("no");
 const confirmBtn = favDialog.querySelector("#confirmBtn");
+const form = document.querySelector("form");
 
 // "Show the dialog" button opens the <dialog> modally
 showButton.addEventListener("click", () => {
   favDialog.showModal();
 });
 
-// "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event.
-favDialog.addEventListener("close", (e) => {
-  outputBox.value =
-    favDialog.returnValue === "default"
-      ? "No return value."
-      : `ReturnValue: ${favDialog.returnValue}.`; // Have to check for "default" rather than empty string
-});
+// favDialog.addEventListener("close", (e) => {
 
-// Prevent the "confirm" button from the default behavior of submitting the form, and close the dialog with the `close()` method, which triggers the "close" event.
+// });
+
+
 confirmBtn.addEventListener("click", (event) => {
-  event.preventDefault(); // We don't want to submit this fake form
-  favDialog.close(selectEl.value); // Have to send the select box value here.
+//   let book = new Book(title, author, pages, )
+  const data = new FormData(form);
+  for (const [key, value] of data) {
+    // console.log(`${entry[0]}`);
+    if(value === "yes") {
+        console.log("yes");
+    }
+    if(value === "no") {
+        console.log("no");
+    }
+  }
+//   console.log(no.value);
+  event.preventDefault(); 
+  favDialog.close(); 
 });
 
 const myLibrary = [];
