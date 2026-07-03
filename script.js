@@ -1,7 +1,10 @@
 const showButton = document.getElementById("showDialog");
 const favDialog = document.getElementById("favDialog");
-// const outputBox = document.querySelector("output");
-// const selectEl = favDialog.querySelector("select");
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+const yes = document.getElementById("yes");
+const no = document.getElementById("no");
 const confirmBtn = favDialog.querySelector("#confirmBtn");
 
 // "Show the dialog" button opens the <dialog> modally
