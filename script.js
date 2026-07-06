@@ -14,7 +14,7 @@ function Book (title, author, pages, read){
     }
 
     if(read === false){
-        this.read = "not read yet";
+        this.read = "not read";
     }
 
     this.id = crypto.randomUUID();
