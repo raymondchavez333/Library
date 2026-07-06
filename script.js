@@ -1,38 +1,3 @@
-const showButton = document.getElementById("showDialog");
-const favDialog = document.getElementById("favDialog");
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const pages = document.getElementById("pages");
-const confirmBtn = favDialog.querySelector("#confirmBtn");
-const form = document.querySelector("form");
-
-// "Show the dialog" button opens the <dialog> modally
-showButton.addEventListener("click", () => {
-  favDialog.showModal();
-});
-
-// favDialog.addEventListener("close", (e) => {
-
-// });
-
-
-confirmBtn.addEventListener("click", (event) => {
-//   let book = new Book(title, author, pages, )
-  const data = new FormData(form);
-  for (const [key, value] of data) {
-    // console.log(`${entry[0]}`);
-    if(value === "yes") {
-        console.log("yes");
-    }
-    if(value === "no") {
-        console.log("no");
-    }
-  }
-//   console.log(no.value);
-  event.preventDefault(); 
-  favDialog.close(); 
-});
-
 const myLibrary = [];
 
 function Book (title, author, pages, read){
@@ -62,45 +27,83 @@ function Book (title, author, pages, read){
 function addBookToLibrary(book){
     myLibrary.push(book);
 }
-const theHobbit = new Book("The Hobbit", "J.R.R.", 295, false);
+// const theHobbit = new Book("The Hobbit", "J.R.R.", 295, false);
 // console.log(theHobbit.info());
 // addBookToLibrary(theHobbit);
 // console.log(myLibrary);
-const atomicHabbits = new Book("Atomic Habits", "James Clear", 320, true);
+// const atomicHabbits = new Book("Atomic Habits", "James Clear", 320, true);
 // addBookToLibrary(atomicHabbits);
 // console.log(myLibrary);
-const subtleArt = new Book("The Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true);
+// const subtleArt = new Book("The Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true);
 // addBookToLibrary(subtleArt);
 // console.log(myLibrary);
-const howToWinFriends = new Book("How to Win Friends and Influence People", "Dale Carnegie", 290, true);
+// const howToWinFriends = new Book("How to Win Friends and Influence People", "Dale Carnegie", 290, true);
 // addBookToLibrary(howToWinFriends);
 // console.log(myLibrary);
-const deepWork = new Book("Deep Work", "Cal Newport", 300, true);
+// const deepWork = new Book("Deep Work", "Cal Newport", 300, true);
 // addBookToLibrary(deepWork);
 // console.log(myLibrary);
 
+const showButton = document.getElementById("showDialog");
+const favDialog = document.getElementById("favDialog");
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
+const form = document.querySelector("form");
 const bot = document.querySelector(".bottom");
 bot.setAttribute("style", "background-color: orange;");
 
-myLibrary.forEach( (object) => {
+// "Show the dialog" button opens the <dialog> modally
+showButton.addEventListener("click", () => {
+  favDialog.showModal();
+});
+
+// favDialog.addEventListener("close", (e) => {
+
+// });
+
+
+confirmBtn.addEventListener("click", (event) => {
+//   let book = new Book(title, author, pages, )
+  const data = new FormData(form);
+  let read = true;
+  for (const [key, value] of data) {
+    // console.log(`${entry[0]}`);
+    if(value === "no") {
+        read = false;
+    }
+  }
+
+  const book = new Book(title.value, author.value, pages.value, read);
+  addBookToLibrary(book);
+  console.log(myLibrary);
+  
     let card = document.createElement("div");
     card.setAttribute("class", "card");
     card.setAttribute("style", "width: 180px; height: 250px; border-color: black; display: grid; grid-template-rows: 80px 80px 35px 35px");
-    let title = document.createElement("div");
-    title.setAttribute("class", "title");
-    title.textContent = `${object.title}`;
-    card.appendChild(title);
-    let author = document.createElement("div");
-    author.setAttribute("class", "author");
-    author.textContent = `${object.author}`;
-    card.appendChild(author);
-    let pages = document.createElement("div");
-    pages.setAttribute("class", "pages");
-    pages.textContent = `${object.pages}`;
-    card.appendChild(pages);
-    let read = document.createElement("div");
-    read.setAttribute("class", "read");
-    read.textContent = `${object.read}`;
-    card.appendChild(read);
+    let titleInfo = document.createElement("div");
+    titleInfo.setAttribute("class", "title");
+    titleInfo.textContent = `${book.title}`;
+    card.appendChild(titleInfo);
+    // let authorInfo = document.createElement("div");
+    // author.setAttribute("class", "author");
+    // author.textContent = `${book.authorInfo}`;
+    // card.appendChild(author);
+    // let pagesInfo = document.createElement("div");
+    // pages.setAttribute("class", "pages");
+    // pages.textContent = `${book.pagesInfo}`;
+    // card.appendChild(pages);
+    // let readInfo = document.createElement("div");
+    // read.setAttribute("class", "read");
+    // read.textContent = `${book.read}`;
+    // card.appendChild(readInfo);
     bot.appendChild(card);
+   
+  event.preventDefault(); 
+  favDialog.close(); 
 });
+
+
+
+
