@@ -88,7 +88,7 @@ confirmBtn.addEventListener("click", (event) => {
     card.appendChild(titleInfo);
     let authorInfo = document.createElement("div");
     authorInfo.setAttribute("class", "author");
-    author.textContent = `${book.author}`;
+    authorInfo.textContent = `${book.author}`;
     card.appendChild(authorInfo);
     let pagesInfo = document.createElement("div");
     pagesInfo.setAttribute("class", "pages");
