@@ -99,10 +99,17 @@ confirmBtn.addEventListener("click", (event) => {
     readInfo.setAttribute("class", "read");
     readInfo.textContent = `${book.read}`;
     card.appendChild(readInfo);
-    let remove = document.createElement("div");
+    let remove = document.createElement("button");
     remove.setAttribute("class", "remove");
     remove.textContent = "Remove";
     card.appendChild(remove);
+    let add = document.createElement("button");
+    add.setAttribute("class", "add");
+    add.textContent = "Click to change reading status";
+    card.append(add); 
+    add.addEventListener("click", () => {
+        alert("Hello World");
+    });
     bot.appendChild(card);
     remove.addEventListener("click", () => {
         // console.log(myLibrary);
