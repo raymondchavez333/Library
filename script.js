@@ -118,6 +118,7 @@ confirmBtn.addEventListener("click", (event) => {
     add.addEventListener("click", () => {
         book.readStatus();
         console.log(myLibrary);
+        readInfo.textContent = `${book.read}`;
     });
     bot.appendChild(card);
     remove.addEventListener("click", () => {
