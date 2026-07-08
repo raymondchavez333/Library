@@ -82,6 +82,7 @@ confirmBtn.addEventListener("click", (event) => {
     let card = document.createElement("div");
     card.setAttribute("class", "card");
     card.setAttribute("style", "width: 180px; height: 250px; border-color: black; display: grid; grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr");
+    card.setAttribute("data-id", `${book.id}`);
     let titleInfo = document.createElement("div");
     titleInfo.setAttribute("class", "title");
     titleInfo.textContent = `${book.title}`;
