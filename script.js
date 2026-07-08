@@ -24,6 +24,14 @@ function Book (title, author, pages, read){
     }
 }
 
+Book.prototype.readStatus = function (){
+    if(this.read === "read"){
+        this.read = "not read";
+    }else{
+        this.read = "read";
+    }
+};
+
 function addBookToLibrary(book){
     myLibrary.push(book);
 }
@@ -108,7 +116,8 @@ confirmBtn.addEventListener("click", (event) => {
     add.textContent = "Click to change reading status";
     card.append(add); 
     add.addEventListener("click", () => {
-        alert("Hello World");
+        book.readStatus();
+        console.log(myLibrary);
     });
     bot.appendChild(card);
     remove.addEventListener("click", () => {
