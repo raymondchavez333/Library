@@ -102,17 +102,16 @@ confirmBtn.addEventListener("click", (event) => {
     let remove = document.createElement("div");
     remove.setAttribute("class", "remove");
     remove.textContent = "Remove";
+    card.appendChild(remove);
+    bot.appendChild(card);
     remove.addEventListener("click", () => {
-        alert(book.id);
         // console.log(myLibrary);
         let newLibrary = myLibrary.filter(item => {
             return item.id !== book.id;
         });
         myLibrary = newLibrary;
-        console.log(myLibrary);
+        bot.removeChild(card);
     });
-    card.appendChild(remove);
-    bot.appendChild(card);
    
   event.preventDefault(); 
   favDialog.close(); 
