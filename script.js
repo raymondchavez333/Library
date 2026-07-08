@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book (title, author, pages, read){
 
@@ -77,7 +77,7 @@ confirmBtn.addEventListener("click", (event) => {
 
   const book = new Book(title.value, author.value, pages.value, read);
   addBookToLibrary(book);
-  console.log(myLibrary);
+//   console.log(myLibrary);
   
     let card = document.createElement("div");
     card.setAttribute("class", "card");
@@ -103,7 +103,13 @@ confirmBtn.addEventListener("click", (event) => {
     remove.setAttribute("class", "remove");
     remove.textContent = "Remove";
     remove.addEventListener("click", () => {
-        alert("Hello World!");
+        alert(book.id);
+        // console.log(myLibrary);
+        let newLibrary = myLibrary.filter(item => {
+            return item.id !== book.id;
+        });
+        myLibrary = newLibrary;
+        console.log(myLibrary);
     });
     card.appendChild(remove);
     bot.appendChild(card);
