@@ -89,22 +89,26 @@ confirmBtn.addEventListener("click", (event) => {
   
     let card = document.createElement("div");
     card.setAttribute("class", "card");
-    card.setAttribute("style", "width: 180px; height: 250px; border-color: black; display: grid; grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr");
+    card.setAttribute("style", "width: 180px; height: 250px; background-color: white; border-color: black; display: grid; grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr");
     card.setAttribute("data-id", `${book.id}`);
     let titleInfo = document.createElement("div");
     titleInfo.setAttribute("class", "title");
+    titleInfo.setAttribute("style", "text-align: center;");
     titleInfo.textContent = `${book.title}`;
     card.appendChild(titleInfo);
     let authorInfo = document.createElement("div");
     authorInfo.setAttribute("class", "author");
+    authorInfo.setAttribute("style", "text-align: center;");
     authorInfo.textContent = `${book.author}`;
     card.appendChild(authorInfo);
     let pagesInfo = document.createElement("div");
     pagesInfo.setAttribute("class", "pages");
+    pagesInfo.setAttribute("style", "text-align: center;");
     pagesInfo.textContent = `${book.pages}`;
     card.appendChild(pagesInfo);
     let readInfo = document.createElement("div");
     readInfo.setAttribute("class", "read");
+    readInfo.setAttribute("style", "text-align: center;");
     readInfo.textContent = `${book.read}`;
     card.appendChild(readInfo);
     let remove = document.createElement("button");
