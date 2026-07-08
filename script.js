@@ -98,6 +98,13 @@ confirmBtn.addEventListener("click", (event) => {
     readInfo.setAttribute("class", "read");
     readInfo.textContent = `${book.read}`;
     card.appendChild(readInfo);
+    let remove = document.createElement("div");
+    remove.setAttribute("class", "remove");
+    remove.textContent = "Remove";
+    remove.addEventListener("click", () => {
+        alert("Hello World!");
+    });
+    card.appendChild(remove);
     bot.appendChild(card);
    
   event.preventDefault(); 
